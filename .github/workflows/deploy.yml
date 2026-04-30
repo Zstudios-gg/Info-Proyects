@@ -16,12 +16,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install root dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Install web dependencies
-        run: npm install
-        working-directory: apps/web
+      - name: Fix bin permissions
+        run: chmod -R +x node_modules/.bin
 
       - name: Build
         run: npm run build
