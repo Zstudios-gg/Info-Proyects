@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: |
           cd apps/web
-          npx vite build
+          node node_modules/vite/bin/vite.js build
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
