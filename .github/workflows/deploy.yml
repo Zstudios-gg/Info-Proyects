@@ -7,20 +7,26 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install dependencies
-        run: |
-          npm install
-          cd apps/web
-          npm install
+
+      - name: Install root dependencies
+        run: npm install
+
+      - name: Install web dependencies
+        run: npm install
+        working-directory: apps/web
+
       - name: Build
-        run: |
-          cd apps/web
-          node node_modules/vite/bin/vite.js build
+        run: npm run build
+        working-directory: apps/web
+
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
