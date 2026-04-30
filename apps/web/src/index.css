@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 0% 6%;
+    --foreground: 270 100% 95%;
+    --primary: 270 50% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 30% 25%;
+    --secondary-foreground: 270 100% 95%;
+    --accent: 270 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --card: 270 20% 12%;
+    --card-foreground: 270 100% 95%;
+    --muted: 270 20% 15%;
+    --muted-foreground: 270 40% 70%;
+    --border: 270 30% 20%;
+    --input: 270 20% 15%;
+    --ring: 270 100% 60%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --popover: 270 20% 12%;
+    --popover-foreground: 270 100% 95%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 10 0% 6%;
+    --foreground: 270 100% 95%;
+    --primary: 270 50% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 30% 25%;
+    --secondary-foreground: 270 100% 95%;
+    --accent: 270 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --card: 270 20% 12%;
+    --card-foreground: 270 100% 95%;
+    --muted: 270 20% 15%;
+    --muted-foreground: 270 40% 70%;
+    --border: 270 30% 20%;
+    --input: 270 20% 15%;
+    --ring: 270 100% 60%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --popover: 270 20% 12%;
+    --popover-foreground: 270 100% 95%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    overflow-x: clip;
+    line-height: 1.625;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Updated logo animation: Smoothly animates width to insert text */
+@keyframes logo-insert {
+  0%, 20% {
+    width: 0;
+    opacity: 0;
+  }
+  40%, 60% {
+    width: 1.85em; /* Optimal width for 'eim' in Outfit */
+    opacity: 1;
+  }
+  80%, 100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+.animate-logo-insert {
+  display: inline-flex;
+  overflow: hidden;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  animation: logo-insert 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
