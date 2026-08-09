@@ -10,7 +10,14 @@ const ProyectosPage = () => {
     {
       title: 'Synapsis',
       description: 'Herramienta de estudio que ayuda a organizar tus notas, adjuntos y una inteligencia artificial con contexto de todo, en un solo lugar.',
-      status: 'Online'
+      status: 'Online',
+      url: 'https://zstudios-gg.github.io/Synapsis/',
+      highlights: [
+        'Organiza tus apuntes por materias, con notas y adjuntos',
+        'Graba clases y las transcribe a texto automáticamente',
+        'Chat con IA que responde usando tus propias notas como contexto',
+        'Personalizable e instalable como app en tu celular',
+      ],
     },
     {
       title: 'Xatruch RPG',
@@ -70,6 +77,8 @@ const ProyectosPage = () => {
                 title={project.title}
                 description={project.description}
                 status={project.status}
+                url={project.url}
+                highlights={project.highlights}
                 delay={index * 0.1}
               />
             ))}
