@@ -8,23 +8,24 @@ import ProjectCard from '@/components/ProjectCard.jsx';
 const ProyectosPage = () => {
   const projects = [
     {
+      title: 'Synapsis',
+      description: 'Herramienta de estudio que ayuda a organizar tus notas, adjuntos y una inteligencia artificial con contexto de todo, en un solo lugar.',
+      status: 'Online'
+    },
+    {
       title: 'Xatruch RPG',
       description: 'Un juego de rol épico ambientado en un mundo de fantasía único, con mecánicas de combate estratégico y una narrativa profunda que se adapta a las decisiones del jugador.',
       status: 'En desarrollo (largo plazo)'
     },
+    
     {
-      title: 'Proyecto 2',
-      description: 'Experiencia multijugador en tiempo real que conecta a jugadores de todo el mundo en desafíos colaborativos y competitivos con sincronización instantánea.',
-      status: 'Planificación'
-    },
-    {
-      title: 'Proyecto 3',
+      title: 'Biovilla',
       description: 'Narrativa interactiva donde cada elección importa. Una historia ramificada con múltiples finales y personajes memorables que responden a tus acciones.',
-      status: 'Concepto'
+      status: 'En desarrollo'
     },
     {
       title: 'Proyecto 4',
-      description: 'Quiz y trivia grupal activado por códigos QR. Perfecto para eventos, educación y entretenimiento social con puntuaciones en vivo y rankings dinámicos.',
+      description: 'Quiz y trivia grupal. Perfecto para eventos, educación y entretenimiento social con puntuaciones en vivo y rankings dinámicos.',
       status: 'Prototipo'
     },
     {
